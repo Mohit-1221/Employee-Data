@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.io.IOException;
 import java.util.Optional;
 
 @Service
@@ -23,7 +24,7 @@ public class CustomService {
         return savedEmployee;
     }
 
-    public Employee getEmployeeById(int id){
+    public Employee getEmployeeById(int id)  {
         Optional<Employee> optionalEmployee = repo.findById(id);
         Employee employee = null;
         if(optionalEmployee.isPresent()){
